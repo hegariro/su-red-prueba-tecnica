@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Su Red - Prueba t&eacute;cnica</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous" />
+    <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <h2>Lista de usuarios</h2>
+  <div class="container">
+    <div class="card-deck">
+      <div th:each="user:${usersData}" class="card" style="width: 18rem;">
+        <img class="card-img-top" th:src="*{user.avatar}" alt="Card image cap">
+        <div class="card-body">
+          <h3 class="card-title" th:text="${user.firstname}"></h3>
+          <h3 class="card-title" th:text="${user.lastname}"></h3>
+          <p class="card-text">
+            Correo <span th:text="${user.email}"></span>
+          </p><p class="card-text">
+            Tel&eacute;fono <span th:text="${user.phoneNumber}"></span>
+          </p><p class="card-text">
+              Ciudad <span th:text="${user.city}"></span>
+          </p><p class="card-text">
+              Pa&iacute;s <span th:text="${user.country}"></span>
+          </p><p class="card-text">
+          <p class="card-text">
+            <small class="text-muted">
+              Fecha de creaci&oacute;n <span th:text="${user.createdAt}"></span>
+            </small>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

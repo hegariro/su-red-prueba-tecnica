@@ -1,0 +1,12 @@
+div.card-deck {
+    display: flex;
+    flex-direction: row;
+    max-width: 75vw;
+}
+div.card {
+    min-width: 20rem;
+}
+.card > img {
+    border-radius: 13px;
+    width: 20rem;
+}
